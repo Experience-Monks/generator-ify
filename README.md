@@ -1,45 +1,47 @@
 # generator-ify [![Build Status](https://secure.travis-ci.org/jam3/generator-ify.png?branch=master)](https://travis-ci.org/jam3/generator-ify)
 
-> [Yeoman](http://yeoman.io) generator
+## About generator-ify
+
+This is a Yeoman generator to get you up and running with Browserify based projects. Thie generator is inspired by [Beefy](https://www.npmjs.org/package/beefy).
+
+Beefy is AWESOME!!! However sometimes it's nice to get an entire project scaffold from which you can get up and running quickly.
+
+The aim of this generator is to be as minimal as possible. The aim is to bring as little dependencies as possible to get up and running.
+
+For useability this generator uses Grunt and a Connect server to run your project.
+
 
 
 ## Getting Started
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
+### Install Yeoman
 ```bash
 npm install -g yo
 ```
 
-### Yeoman Generators
+### Install and Use Generator
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-ify from npm, run:
-
+Install the the browserify generator:
 ```bash
-npm install -g generator-ify
+npm i -g generator-ify
 ```
 
-Finally, initiate the generator:
-
+Create a directory and run the generator:
 ```bash
+mkdir your_project && cd your_project
 yo ify
 ```
+If this is your first time using the generator just hit enter at all the prompts.
 
-### Getting To Know Yeoman
+Almost there just run `grunt`:
+```bash
+grunt
+```
+Running `grunt` will continually `Browserify` the `index.js` in the root directory of
+the project.
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+You can see the result by going to `http://localhost:8000` in your Browser.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
 
 ## License
