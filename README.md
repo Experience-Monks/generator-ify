@@ -4,7 +4,7 @@
 
 This is a Yeoman generator to get you up and running with Browserify based projects. Thie generator is inspired by [Beefy](https://www.npmjs.org/package/beefy).
 
-Beefy is AWESOME!!! However sometimes it's nice to get an entire project scaffold from which you can get up and running quickly.
+[Beefy](https://www.npmjs.org/package/beefy) is AWESOME!!! However sometimes it's nice to get an entire project scaffold from which you can get up and running quickly.
 
 The aim of this generator is to be as minimal as possible. The aim is to bring as little dependencies as possible to get up and running.
 
