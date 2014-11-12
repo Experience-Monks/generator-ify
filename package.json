@@ -1,7 +1,7 @@
 {
   "name": "generator-ify",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.1",
+  "description": "This is a bare bones Browserify project generator. Inspired by the ease of use with Beefy. Browserify compiles are performed via Grunt and the application is served via Connect",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "jam3/generator-ify",
@@ -20,7 +20,10 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "browserify",
+    "minimal",
+    "generator"
   ],
   "dependencies": {
     "yeoman-generator": "^0.17.0",
