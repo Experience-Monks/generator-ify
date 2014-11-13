@@ -5,8 +5,17 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 
 var IfyGenerator = yeoman.generators.Base.extend({
-	initializing: function () {
-		this.pkg = require('../package.json');
+
+	constructor: function() {
+
+		yeoman.generators.Base.apply(this, arguments);
+
+		this.option( 'noNPM', {
+
+			desc: 'Pass this option to not run npm install',
+			type: 'Boolean',
+			defaults: false
+		});
 	},
 
 	prompting: { 
@@ -155,12 +164,10 @@ var IfyGenerator = yeoman.generators.Base.extend({
 			}
 		}
 
-		this.npmInstall( deps, { 'save-dev': true }, done );
-	},
-
-	end: function() {
-
-		console.log( 'finished')
+		if( !this.options.noNPM )
+			this.npmInstall( deps, { 'save-dev': true }, done );
+		else
+			done();
 	}
 });
 
