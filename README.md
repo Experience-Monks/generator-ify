@@ -1,4 +1,4 @@
-# generator-ify [![Build Status](https://secure.travis-ci.org/jam3/generator-ify.png?branch=master)](https://travis-ci.org/jam3/generator-ify)
+# generator-ify [![Build Status](https://travis-ci.org/Jam3/generator-ify.svg?branch=master)](https://travis-ci.org/Jam3/generator-ify)
 
 ## About generator-ify
 
