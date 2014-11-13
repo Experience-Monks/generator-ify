@@ -10,6 +10,7 @@ var IfyGenerator = yeoman.generators.Base.extend({
 
 		yeoman.generators.Base.apply(this, arguments);
 
+		// this option is used mostly for testing but might be in other cases also
 		this.option( 'noNPM', {
 
 			desc: 'Pass this option to not run npm install',
