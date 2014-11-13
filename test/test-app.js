@@ -17,11 +17,7 @@ describe('ify:app', function () {
         useGrunt: true,
         useLocalServer: true
       })
-      .on( 'end', function() {
-
-        console.log( 'DONE' );
-        done();
-      });
+      .on( 'end', done );
   });
 
   it('creates files', function () {
