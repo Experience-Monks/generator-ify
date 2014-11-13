@@ -17,6 +17,33 @@ var IfyGenerator = yeoman.generators.Base.extend({
 			type: 'Boolean',
 			defaults: false
 		});
+
+		this.option( 'grunt', {
+
+			desc: 'If you want to use grunt pass in this option',
+			type: 'Boolean',
+			defaults: false
+		});
+
+		this.option( 'localServer', {
+
+			desc: 'If you want to use a local server pass in this option',
+			type: 'Boolean',
+			defaults: false
+		});
+	},
+
+	initializing: function() {
+
+		var s = this.config.get( 'settings' ) || {};
+
+		if( this.options.grunt )
+			s.useGrunt = true;
+
+		if( this.options.localServer )
+			s.useLocalServer = true;
+
+		this.config.set( 'settings', s );
 	},
 
 	prompting: { 
@@ -33,20 +60,26 @@ var IfyGenerator = yeoman.generators.Base.extend({
 			var done = this.async(),
 				s = this.config.get( 'settings' ) || {};
 
-			var prompts = [{
-				type: 'confirm',
-				name: 'useGrunt',
-				message: 'Do you want to use grunt?',
-				default: true
-			}];
+			if( s.useGrunt === undefined ) {
 
-			this.prompt(prompts, function (props) {
+				var prompts = [{
+					type: 'confirm',
+					name: 'useGrunt',
+					message: 'Do you want to use grunt?',
+					default: true
+				}];
 
-				s.useGrunt = props.useGrunt;
-				this.config.set( 'settings', s );
+				this.prompt(prompts, function (props) {
+
+					s.useGrunt = props.useGrunt;
+					this.config.set( 'settings', s );
+
+					done();
+				}.bind(this));
+			} else {
 
 				done();
-			}.bind(this));
+			}
 		},
 
 		askLocalServer: function() {
@@ -54,20 +87,26 @@ var IfyGenerator = yeoman.generators.Base.extend({
 			var done = this.async(),
 				s = this.config.get( 'settings' ) || {};
 
-			var prompts = [{
-				type: 'confirm',
-				name: 'useLocalServer',
-				message: 'Do you want a local dev server?',
-				default: true
-			}];
+			if( s.useGrunt && s.useLocalServer === undefined ) {
 
-			this.prompt(prompts, function (props) {
+				var prompts = [{
+					type: 'confirm',
+					name: 'useLocalServer',
+					message: 'Do you want a local dev server?',
+					default: true
+				}];
 
-				s.useLocalServer = props.useLocalServer;
-				this.config.set( 'settings', s );
+				this.prompt(prompts, function (props) {
+
+					s.useLocalServer = props.useLocalServer;
+					this.config.set( 'settings', s );
+
+					done();
+				}.bind(this));
+			} else {
 
 				done();
-			}.bind(this));
+			}
 		}
 	},
 
